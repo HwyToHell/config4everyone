@@ -1,0 +1,313 @@
+[
+  {
+    "packaged good": "fresh milk",
+    "goods type": "liquid",
+    "industry": "dairy",
+    "hygienic class": "ultraclean",
+    "pressure": ""
+  },
+  {
+    "packaged good": "liquid dairy products",
+    "goods type": "liquid",
+    "industry": "dairy",
+    "hygienic class": "aseptic",
+    "pressure": ""
+  },
+  {
+    "packaged good": "dessert",
+    "goods type": "paste",
+    "industry": "dairy",
+    "hygienic class": "aseptic",
+    "pressure": ""
+  },
+  {
+    "packaged good": "yoghurt",
+    "goods type": "paste",
+    "industry": "dairy",
+    "hygienic class": "ultraclean",
+    "pressure": ""
+  },
+  {
+    "packaged good": "cream cheese",
+    "goods type": "paste",
+    "industry": "dairy",
+    "hygienic class": "clean",
+    "pressure": ""
+  },
+  {
+    "packaged good": "baby food",
+    "goods type": "paste",
+    "industry": "food",
+    "hygienic class": "ultraclean",
+    "pressure": ""
+  },
+  {
+    "packaged good": "fruit juice",
+    "goods type": "liquid",
+    "industry": "beverage",
+    "hygienic class": "clean",
+    "pressure": ""
+  },
+  {
+    "packaged good": "carbonated softdrink",
+    "goods type": "liquid",
+    "industry": "beverage",
+    "hygienic class": "clean",
+    "pressure": "carbonated"
+  },
+  {
+    "packaged good": "water",
+    "goods type": "liquid",
+    "industry": "beverage",
+    "hygienic class": "clean",
+    "pressure": ""
+  },
+  {
+    "packaged good": "beer",
+    "goods type": "liquid",
+    "industry": "beverage",
+    "hygienic class": "clean",
+    "pressure": "carbonated"
+  },
+  {
+    "packaged good": "coffebeans",
+    "goods type": "powder",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "ground coffee",
+    "goods type": "dry bulk",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "spices",
+    "goods type": "powder",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "snacks",
+    "goods type": "dry bulk",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "cereals",
+    "goods type": "dry bulk",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "cereal bars",
+    "goods type": "dry piece",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "chocolate bar",
+    "goods type": "dry piece",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "chocolate pieces",
+    "goods type": "dry bulk",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "candy",
+    "goods type": "dry bulk",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "pasta",
+    "goods type": "dry bulk",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "frozen food",
+    "goods type": "wet piece",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "frozen food",
+    "goods type": "wet bulk",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "salad",
+    "goods type": "wet bulk",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "meat pieces",
+    "goods type": "wet piece",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "ground meat",
+    "goods type": "paste",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "sausage",
+    "goods type": "wet piece",
+    "industry": "food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "cheese",
+    "goods type": "wet piece",
+    "industry": "dairy",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "tablets",
+    "goods type": "dry piece",
+    "industry": "pharma",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "liquid medicine",
+    "goods type": "liquid",
+    "industry": "pharma",
+    "hygienic class": "sterile",
+    "pressure": ""
+  },
+  {
+    "packaged good": "non-food pieces",
+    "goods type": "dry piece",
+    "industry": "non-food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "prepackaged boxes",
+    "goods type": "dry piece",
+    "industry": "non-food",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": "",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": " ",
+    "goods type": "",
+    "industry": "",
+    "hygienic class": "",
+    "pressure": ""
+  },
+  {
+    "packaged good": ""
+  }
+]

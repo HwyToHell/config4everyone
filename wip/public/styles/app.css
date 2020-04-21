@@ -1,0 +1,25 @@
+.border-10 {
+    border-width: 0.5rem;
+}
+
+.bg-jumbo {
+    background: #e9ecef;
+}
+
+.card {
+    border-width: 2px;
+}
+.card-sel {
+    color: #007bff;
+    border-width: 2px;
+    border-color: #007bff;
+}
+
+.footer {
+    background-color: #e9ecef;
+}
+
+#form-new {
+    width: 30%;
+    margin: 0 auto;
+}
