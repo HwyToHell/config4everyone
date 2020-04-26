@@ -3,7 +3,8 @@ const papa = require('papaparse');
 
 
 // Read CSV and parse
-const config_file = './data/packaged-goods.csv';
+//const config_file = './data/packaged-goods.csv';
+//const config_file = './data/package-types.csv';
 var parsed = {};
 try {
     const data = fs.readFileSync(config_file, 'utf-8');
@@ -29,7 +30,8 @@ console.log(parsed.data.slice(0,3));
 
 
 // Write JSON
-const json_file = './data/packaged-goods.json';
+//const json_file = './data/packaged-goods.json';
+//const json_file = './data/package-types.json';
 try {
     fs.writeFileSync(json_file, JSON.stringify(parsed.data, null, 2));
     console.log("written:", json_file);

@@ -1,0 +1,82 @@
+[
+  {
+    "package type": "bag",
+    "material": [ "coated paper", "plastic", "PE", "PP" ],
+    "subtype": [ "regular", "pillow" ],
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
+  },
+  {
+    "package type": "bottle",
+    "material": [ "glass", "PET" ],
+    "subtype": "",
+    "image src":
+    {
+      "standard": "liquid-dairy-products.jpg",
+      "custom": "" 
+    }
+  },
+  {
+    "package type": "can",
+    "material": "aluminum",
+    "subtype": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
+  },
+  {
+    "package type": "cup",
+    "material": [ "coated paperboard", "plastic", "aluminum-plastic" ], 
+    "subtype": [ "pre-formed", "In-machine-formed" ],
+    "image src":
+    {
+      "standard": "liquid-dairy-products.jpg",
+      "custom": "" 
+    }
+  },
+  {
+    "package type": "flow wrap",
+    "material": [ "coated paper", "plastic", "PE", "PP" ],
+    "subtype": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
+  },
+  {
+    "package type": "jar",
+    "material": "glass",
+    "subtype": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
+  },
+  {
+    "package type": "pillow bag",
+    "material": "",
+    "subtype": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
+  },
+  {
+    "package type": "pouch",
+    "material": [ "coated paper", "plastic", "PE", "PP" ],
+    "subtype": [ "side seal", "stand-up" ],
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
+  }
+]

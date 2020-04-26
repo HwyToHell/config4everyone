@@ -24,38 +24,49 @@
                     <div class="row">
                         <div class="col-md-4 col-lg-3">
                             <div class="card m-2 industry">
-                                <div class="card-header">Food</div>
+                                <div class="card-header text-center">Food</div>
                                 <img class="card-img-bottom" src="pictures/food.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-3">
                             <div class="card m-2 industry">
-                                <div class="card-header">Beverage</div>
+                                <div class="card-header text-center">Beverage</div>
                                 <img class="card-img-bottom" src="pictures/beverage.jpg" alt="">
                             </div> 
                         </div>
                         <div class="col-md-4 col-lg-3">
                             <div class="card m-2 industry">
-                                <div class="card-header">Pharma</div>
+                                <div class="card-header text-center">Pharma</div>
                                 <img class="card-img-bottom" src="pictures/pharma.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-3">
                             <div class="card m-2 industry">
-                                <div class="card-header">Cosmetics</div>
+                                <div class="card-header text-center">Cosmetics</div>
                                 <img class="card-img-bottom" src="pictures/cosmetics.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-3">
                             <div class="card m-2 industry">
-                                <div class="card-header">Others</div>
+                                <div class="card-header text-center">Others</div>
                                 <img class="card-img-bottom" src="pictures/other.jpg" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
                 <p class="mt-5">... and the products you want to package</p>
-
+                <div class="container">
+                    <div class="row">
+                        <% types.forEach(element => { %> 
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card m-2 industry">
+                                <div class="card-header text-center"><%= element["packaged good"] %> </div>
+                                <img class="card-img-bottom" src="pictures/packaged-goods/<%= element["image src"]["standard"] %> " alt="">
+                            </div>
+                        </div>
+                        <% }); %> 
+                    </div>
+                </div>
             </div>
             <div class="tab-pane fade" id="types" role="tabpanel" aria-labelledby="types-tab">...</div>
             <div class="tab-pane fade" id="output" role="tabpanel" aria-labelledby="output-tab">...</div>

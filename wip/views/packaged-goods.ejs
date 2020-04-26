@@ -1,0 +1,55 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h3 class="text-primary">Configuring visually has never been easier ...</h3>
+    <p class="mt-3">Select your industry segment ...</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-3">
+                <div class="card m-2 industry">
+                    <div class="card-header text-center">Food</div>
+                    <img class="card-img-bottom" src="/public/pictures/food.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card m-2 industry">
+                    <div class="card-header text-center">Beverage</div>
+                    <img class="card-img-bottom" src="/public/pictures/beverage.jpg" alt="">
+                </div> 
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card m-2 industry">
+                    <div class="card-header text-center">Pharma</div>
+                    <img class="card-img-bottom" src="/public/pictures/pharma.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card m-2 industry">
+                    <div class="card-header text-center">Cosmetics</div>
+                    <img class="card-img-bottom" src="/public/pictures/cosmetics.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="card m-2 industry">
+                    <div class="card-header text-center">Others</div>
+                    <img class="card-img-bottom" src="/public/pictures/other.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="mt-5">... and the products you want to package</p>
+    <div class="container">
+        <div class="row">
+            <% goods.forEach(element => { %> 
+            <div class="col-md-4 col-lg-3">
+                <div class="card m-2 industry">
+                    <div class="card-header text-center"><%= element["packaged good"] %> </div>
+                    <img class="card-img-bottom" src="/public/pictures/packaged-goods/<%= element["image src"]["standard"] %> " alt="">
+                </div>
+            </div>
+            <% }); %> 
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

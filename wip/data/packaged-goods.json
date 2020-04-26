@@ -1,313 +1,374 @@
 [
   {
-    "packaged good": "fresh milk",
-    "goods type": "liquid",
-    "industry": "dairy",
-    "hygienic class": "ultraclean",
-    "pressure": ""
-  },
-  {
     "packaged good": "liquid dairy products",
     "goods type": "liquid",
     "industry": "dairy",
     "hygienic class": "aseptic",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "liquid-dairy-products.jpg",
+      "custom": "" 
+    }
+  },
+  {
+    "packaged good": "fresh milk",
+    "goods type": "liquid",
+    "industry": "dairy",
+    "hygienic class": "ultraclean",
+    "pressure": "",
+    "image src":
+    {
+      "standard": "fresh-milk.jpg",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "dessert",
     "goods type": "paste",
     "industry": "dairy",
     "hygienic class": "aseptic",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "dessert.jpg",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "yoghurt",
     "goods type": "paste",
     "industry": "dairy",
     "hygienic class": "ultraclean",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "yoghurt.jpg",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "cream cheese",
     "goods type": "paste",
     "industry": "dairy",
     "hygienic class": "clean",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "cream-cheese.jpg",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "baby food",
     "goods type": "paste",
     "industry": "food",
     "hygienic class": "ultraclean",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "baby-food.jpg",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "fruit juice",
     "goods type": "liquid",
     "industry": "beverage",
     "hygienic class": "clean",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "fruit-juice.jpg",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "carbonated softdrink",
     "goods type": "liquid",
     "industry": "beverage",
     "hygienic class": "clean",
-    "pressure": "carbonated"
+    "pressure": "carbonated",
+    "image src":
+    {
+      "standard": "carbonated-softdrink.jpg",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "water",
     "goods type": "liquid",
     "industry": "beverage",
     "hygienic class": "clean",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "water.jpg",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "beer",
     "goods type": "liquid",
     "industry": "beverage",
     "hygienic class": "clean",
-    "pressure": "carbonated"
+    "pressure": "carbonated",
+    "image src":
+    {
+      "standard": "beer.jpg",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "coffebeans",
     "goods type": "powder",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "ground coffee",
     "goods type": "dry bulk",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "spices",
     "goods type": "powder",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "snacks",
     "goods type": "dry bulk",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "cereals",
     "goods type": "dry bulk",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "cereal bars",
     "goods type": "dry piece",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "chocolate bar",
     "goods type": "dry piece",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "chocolate pieces",
     "goods type": "dry bulk",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "candy",
     "goods type": "dry bulk",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "pasta",
     "goods type": "dry bulk",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "frozen food",
     "goods type": "wet piece",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "frozen food",
     "goods type": "wet bulk",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "salad",
     "goods type": "wet bulk",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "meat pieces",
     "goods type": "wet piece",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "ground meat",
     "goods type": "paste",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "sausage",
     "goods type": "wet piece",
     "industry": "food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "cheese",
     "goods type": "wet piece",
     "industry": "dairy",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
+
   },
   {
     "packaged good": "tablets",
     "goods type": "dry piece",
     "industry": "pharma",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "liquid medicine",
     "goods type": "liquid",
     "industry": "pharma",
     "hygienic class": "sterile",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "non-food pieces",
     "goods type": "dry piece",
     "industry": "non-food",
     "hygienic class": "",
-    "pressure": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   },
   {
     "packaged good": "prepackaged boxes",
     "goods type": "dry piece",
     "industry": "non-food",
     "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": "",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": " ",
-    "goods type": "",
-    "industry": "",
-    "hygienic class": "",
-    "pressure": ""
-  },
-  {
-    "packaged good": ""
+    "pressure": "",
+    "image src":
+    {
+      "standard": "",
+      "custom": "" 
+    }
   }
 ]

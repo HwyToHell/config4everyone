@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h3 class="text-primary">Configuring visually has never been easier ...</h3>
+    <div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="goods-tab" data-toggle="tab" href="/packaged-goods" role="tab" aria-controls="goods" aria-selected="true">Packaged Goods</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="types-tab" data-toggle="tab" href="/package-types" role="tab" aria-controls="types" aria-selected="false">Package Types</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="output-tab" data-toggle="tab" href="#output" role="tab" aria-controls="output" aria-selected="false">Output</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="machine-tab" data-toggle="tab" href="#machine" role="tab" aria-controls="machine" aria-selected="false">Machine Options</a>
+              </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="goods" role="tabpanel" aria-labelledby="goods-tab">...</div>
+
+            <div class="tab-pane fade show active" id="types" role="tabpanel" aria-labelledby="types-tab">
+                <p class="mt-5">... and the products you want to package</p>
+                <div class="container">
+                    <div class="row">
+                        <% types.forEach(element => { %> 
+                        <div class="col-md-4 col-lg-3">
+                            <div class="card m-2 industry">
+                                <div class="card-header text-center"><%= element["package type"] %> </div>
+                                <img class="card-img-bottom" src="pictures/packaged-goods/<%= element["image src"]["standard"] %> " alt="">
+                            </div>
+                        </div>
+                        <% }); %> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="output" role="tabpanel" aria-labelledby="output-tab">...</div>
+            <div class="tab-pane fade" id="machine" role="tabpanel" aria-labelledby="machine-tab">...</div>
+          </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

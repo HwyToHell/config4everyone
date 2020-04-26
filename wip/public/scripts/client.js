@@ -12,5 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
             //jQuery(this).find("hr").toggleClass("selected");
             //jQuery(this).find(".card-header").toggleClass("text-primary");
         });
-    })
+    });
+
+/*    $(".nav-item a").on("show.bs.tab", function() {
+        alert("new tab to be shown");
+    });
+    */
 });
+
+
