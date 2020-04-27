@@ -103,25 +103,21 @@ app.post("/configurations", function(req, res){
     res.redirect(`/configurations/${id_new}`);
 });
 
-// EDIT
-app.get("/configurations/:id/edit", function(req, res){
-    // show available options
-    // show selected options
-
-});
-
-// UPDATE
-app.put("/configurations/:id" , function(req, res){
-    // PUT updated data to selected options
-}); 
-
 // SHOW
 app.get("/configurations/:id", function(req, res){
     res.render("packaged-goods", {goods: opts_available.packaged_goods});
 });
 
+
+// UPDATE
+app.post("/configurations/:id", function(req, res){
+    console.log("POST");
+    console.log(req.body.name);
+});
+
+
 /* app.get(/packaged-goods, function(req, res){
-    res.render("packaged-goods", {goods: opts_available.packaged_goods});
+res.render("packaged-goods", {goods: opts_available.packaged_goods});
 });
 
 app.get("/package-types", function(req, res){

@@ -14,10 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    document.querySelector("#update-cfg").addEventListener("click", function(){
+        console.log("update button pressed");
+        jQuery.post("/configurations/1", {name: "configuration"});
+    });
 /*    $(".nav-item a").on("show.bs.tab", function() {
         alert("new tab to be shown");
     });
     */
 });
-
-
