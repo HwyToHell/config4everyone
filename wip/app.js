@@ -4,14 +4,15 @@ var express = require("express"),
     fs = require("fs"),
     app = express(),
     port = 3000,
-    opts_available = {
+    available = {
         packaged_goods: [],
         package_types: [],
         machine_types: [],
         machine_options: [],
         image_paths: {
-            packaged_goods: "pictures/packaged-goods/",
-            package_types: "pictures/package-types"
+            industries: "images/packaged-goods/",
+            packaged_goods: "images/packaged-goods/",
+            package_types: "images/package-types/"
         }
     },
     config_id = 0,
@@ -28,42 +29,30 @@ if (!module.parent) {
 
 // Read JSON and parse
 try {
-    file = "./data/package-types.json";
-    const json_data = fs.readFileSync(file, "utf-8");
+    let file = "./data/industries.json",
+        json_data = fs.readFileSync(file, "utf-8");
     // console.log(json_data);
     console.log("read:", file);
+    available.industries = JSON.parse(json_data);
 
-    opts_available.package_types = JSON.parse(json_data);
-
-    //console.log(opts_available.package_types.slice(0,3));
-    //console.log(typeof(opts_available.package_types), "Array:", Array.isArray(opts_available.package_types));
-    //console.log(packaged_goods.find(isDairy));
-    
-} catch (err) {
-    console.log(err);
-}
-
-try {
     file = "./data/packaged-goods.json";
-    const json_data = fs.readFileSync(file, "utf-8");
+    json_data = fs.readFileSync(file, "utf-8");
     // console.log(json_data);
     console.log("read:", file);
+    available.packaged_goods = JSON.parse(json_data);
 
-    opts_available.packaged_goods = JSON.parse(json_data);
+    file = "./data/package-types.json";
+    json_data = fs.readFileSync(file, "utf-8");
+    console.log("read:", file);
+    available.package_types = JSON.parse(json_data);
 
-    //console.log(opts_available.packaged_goods.slice(0,3));
-    //console.log(typeof(opts_available.package_types), "Array:", Array.isArray(opts_available.package_types));
+    //console.log(available.packaged_goods.slice(0,3));
+    //console.log(typeof(available.package_types), "Array:", Array.isArray(available.package_types));
     //console.log(packaged_goods.find(isDairy));
     
 } catch (err) {
     console.log(err);
 }
-
-/*opts_available.packaged_goods.forEach(element => {
-    console.log(element["packaged good"]);
-    console.log(element["image src"]);
-});
-*/
 
 
 // ROUTES
@@ -80,7 +69,22 @@ app.get("/configurations", function(req, res){
 
 // NEW
 app.get("/configurations/new", function(req, res){
-    res.render("configurations/new");
+    console.log("NEW route");
+    res.render("configurations/new", {
+        industries: available.industries,
+        goods: available.packaged_goods,
+        types: available.package_types
+    });
+});
+
+// SHOW
+app.get("/configurations/:id", function(req, res){
+    console.log("SHOW route");
+    res.render("configurations/show", {
+        industries: available.industries,
+        goods: available.packaged_goods,
+        types: available.package_types
+    });
 });
 
 // CREATE
@@ -103,10 +107,15 @@ app.post("/configurations", function(req, res){
     res.redirect(`/configurations/${id_new}`);
 });
 
-// SHOW
-app.get("/configurations/:id", function(req, res){
-    res.render("packaged-goods", {goods: opts_available.packaged_goods});
+// EDIT
+app.get("/configurations/::id/edit", function(req, res){
+    res.render("configurations/edit", {
+        industries: available.industries,
+        goods: available.packaged_goods,
+        types: available.package_types
+    });
 });
+
 
 
 // UPDATE
@@ -117,11 +126,11 @@ app.post("/configurations/:id", function(req, res){
 
 
 /* app.get(/packaged-goods, function(req, res){
-res.render("packaged-goods", {goods: opts_available.packaged_goods});
+res.render("packaged-goods", {goods: available.packaged_goods});
 });
 
 app.get("/package-types", function(req, res){
-    res.render("package-types", {types: opts_available.package_types});
+    res.render("package-types", {types: available.package_types});
 });
 */
 

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "industry": "beverage",
+    "hygienic class": "clean",
+    "pressure": "",
+    "image src":
+    {
+        "standard": "beverage.jpg",
+        "custom": "" 
+    }
+  },
+  {
+    "id": 2,
+    "industry": "dairy",
+    "image src":
+    {
+      "standard": "dairy.jpg",
+      "custom": "" 
+    }
+  },
+  {
+    "id": 3,
+    "industry": "food",
+    "image src":
+    {
+      "standard": "food.jpg",
+      "custom": "" 
+    }
+  },
+  {
+    "id": 4,
+    "industry": "cosmetics",
+    "image src":
+    {
+      "standard": "cosmetics.jpg",
+      "custom": "" 
+    }
+  },
+  {
+    "id": 5,
+    "industry": "pharma",
+    "image src":
+    {
+      "standard": "pharma.jpg",
+      "custom": "" 
+    }
+  },
+  {
+    "id": 6,
+    "industry": "other",
+    "image src":
+    {
+      "standard": "other.jpg",
+      "custom": "" 
+    }
+  }
+]

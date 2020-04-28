@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+
+
+<!-- list industry -->
+<div class="container">
+    <h3 class="text-primary">Configuring visually has never been easier ...</h3>
+    <p class="mt-3">Select your industry segment ...</p>
+    <div class="container">
+        <div class="row">
+            <% industries.forEach(element => { %> 
+            <div class="col-md-4 col-lg-3">
+                <div class="card m-2 industry">
+                    <div class="card-header text-center"><%= element["industry"] %></div>
+                    <img class="card-img-bottom" src="/public/images/industries/<%= element["image src"]["standard"] %> " alt="">
+                </div>
+            </div>
+            <% }); %> 
+        </div>
+    </div>
+    <p id="update-cfg" class="btn btn-primary btn-block">Update Configuration</p>
+
+    <!-- list packaged goods -->
+    <p class="mt-5">... and the products you want to package</p>
+    <div class="container">
+        <div class="row">
+            <% goods.forEach(element => { %> 
+            <div class="col-md-4 col-lg-3">
+                <div class="card m-2 industry">
+                    <div class="card-header text-center"><%= element["packaged good"] %></div>
+                    <img class="card-img-bottom" src="/public/images/packaged-goods/<%= element["image src"]["standard"] %> " alt="">
+                </div>
+            </div>
+            <% }); %> 
+        </div>
+    </div>
+</div>
+
+<!-- TODO delete client.js in show template, insert in new and edit -->
+<script src="/public/scripts/client.js"></script>
+<%- include('../partials/footer') %>
