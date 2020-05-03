@@ -2,8 +2,6 @@
   {
     "id": 1,
     "industry": "beverage",
-    "hygienic class": "clean",
-    "pressure": "",
     "image src":
     {
         "standard": "beverage.jpg",

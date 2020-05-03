@@ -1,10 +1,11 @@
 var express = require("express"),
     bodyParser = require("body-parser"),
-    logger = require("morgan"),
+    // logger = require("morgan"),
     fs = require("fs"),
     app = express(),
     port = 3000,
-    available = {
+    template = {
+        industries: [],
         packaged_goods: [],
         package_types: [],
         machine_types: [],
@@ -15,44 +16,63 @@ var express = require("express"),
             package_types: "images/package-types/"
         }
     },
-    config_id = 0,
+    id_current = 0,
     configurations = [];
-
-console.log(__dirname);
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use("/public", express.static(__dirname + "/public"));
-if (!module.parent) {
+/*if (!module.parent) {
     app.use(logger("dev"));
-}
+}*/
 
 // Read JSON and parse
 try {
     let file = "./data/industries.json",
         json_data = fs.readFileSync(file, "utf-8");
-    // console.log(json_data);
     console.log("read:", file);
-    available.industries = JSON.parse(json_data);
+    template.industries = JSON.parse(json_data);
 
     file = "./data/packaged-goods.json";
     json_data = fs.readFileSync(file, "utf-8");
-    // console.log(json_data);
     console.log("read:", file);
-    available.packaged_goods = JSON.parse(json_data);
+    template.packaged_goods = JSON.parse(json_data);
 
     file = "./data/package-types.json";
     json_data = fs.readFileSync(file, "utf-8");
     console.log("read:", file);
-    available.package_types = JSON.parse(json_data);
-
-    //console.log(available.packaged_goods.slice(0,3));
-    //console.log(typeof(available.package_types), "Array:", Array.isArray(available.package_types));
-    //console.log(packaged_goods.find(isDairy));
-    
+    template.package_types = JSON.parse(json_data);    
 } catch (err) {
     console.log(err);
 }
+
+// CONTROLLER
+// generate unique ID
+var uniqueId = (function() {
+    var id = 0;
+    return {
+        get: function() {
+            ++id;
+            return id;
+        }
+    };
+})();
+
+function createConfig(template) {
+    // in:  template
+    // out: config with new ID, based on template
+
+    return {
+        id: uniqueId.get(),
+        industries: template.industries,
+        packaged_goods: template.packaged_goods,
+        package_types: template.package_types,
+        machine_types: template.machine_types,
+        machine_options: template.machine_options
+    };
+}
+
+
 
 
 // ROUTES
@@ -62,61 +82,84 @@ app.get("/", function(req, res){
     res.render("index");
 });
 
+// TEST
+app.get("/test", function(req, res){
+    var new_config = createConfig(template);
+    //res.send(`new config id: ${new_config.id}`);
+
+    res.render("configurations/edit", {
+        industries: new_config.industries,
+        goods: new_config.packaged_goods,
+        types: new_config.package_types
+    });
+
+});
+
+
 // INDEX
 app.get("/configurations", function(req, res){
+    console.log("INDEX route");
     res.render("configurations/index");
 });
 
 // NEW
 app.get("/configurations/new", function(req, res){
     console.log("NEW route");
-    res.render("configurations/new", {
-        industries: available.industries,
-        goods: available.packaged_goods,
-        types: available.package_types
+    res.send("redirecting to POST /configurations");
+    /*res.render("configurations/new", {
+        industries: template.industries,
+        goods: template.packaged_goods,
+        types: template.package_types
     });
+    */
+});
+
+// CREATE
+app.post("/configurations", function(req, res){
+    console.log("CREATE route");
+    // DEBUG
+    console.log(req.body);
+    // move to CREATE
+    configurations.push(createConfig(template));
+    id_current = configurations[configurations.length - 1].id;
+    
+    // redirect to EDIT route: /configurations/id
+    //res.send(`/configurations/${id_current}/edit`);
+    res.redirect(`/configurations/${id_current}/edit`);
 });
 
 // SHOW
 app.get("/configurations/:id", function(req, res){
     console.log("SHOW route");
     res.render("configurations/show", {
-        industries: available.industries,
-        goods: available.packaged_goods,
-        types: available.package_types
+        industries: template.industries,
+        goods: template.packaged_goods,
+        types: template.package_types
     });
-});
-
-// CREATE
-app.post("/configurations", function(req, res){
-    // DEBUG
-
-    // get id_new
-    var id_new = ++config_id;
-
-    // create configuration with empty selected choices -> selected = []
-    var config_new = {
-        packaged_goods: [],
-        package_types: [],
-        machine_types: [],
-        machine_options: []
-    };
-    configurations.push({id_new, config_new});
-    
-    // redirect to EDIT route: /configurations/id_new
-    res.redirect(`/configurations/${id_new}`);
 });
 
 // EDIT
-app.get("/configurations/::id/edit", function(req, res){
-    res.render("configurations/edit", {
-        industries: available.industries,
-        goods: available.packaged_goods,
-        types: available.package_types
+app.get(`/configurations/:${id_current}/edit`, function(req, res){
+    console.log("EDIT route");
+
+    var config_current = configurations.find(function(config) {   
+        return (config.id === id_current);
+    });
+
+    if (config_current === undefined) {
+        console.log("cannot get current configuration");
+    };
+
+   /* config_current.industries.forEach(function(element) {
+        console.log(element.industry);
+    });
+*/
+    res.render("configurations/edit.ejs", {
+        industries: config_current.industries,
+        goods: config_current.packaged_goods,
+        types: config_current.package_types
     });
 });
-
-
 
 // UPDATE
 app.post("/configurations/:id", function(req, res){
