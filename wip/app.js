@@ -105,20 +105,13 @@ app.get("/configurations", function(req, res){
 // NEW
 app.get("/configurations/new", function(req, res){
     console.log("NEW route");
-    res.send("redirecting to POST /configurations");
-    /*res.render("configurations/new", {
-        industries: template.industries,
-        goods: template.packaged_goods,
-        types: template.package_types
-    });
-    */
+    //res.send("redirecting to POST /configurations");
+    res.render("configurations/new");
 });
 
 // CREATE
 app.post("/configurations", function(req, res){
     console.log("CREATE route");
-    // DEBUG
-    console.log(req.body);
     // move to CREATE
     configurations.push(createConfig(template));
     id_current = configurations[configurations.length - 1].id;
@@ -147,6 +140,7 @@ app.get(`/configurations/:${id_current}/edit`, function(req, res){
     });
 
     if (config_current === undefined) {
+        res.send("configuration not found");
         console.log("cannot get current configuration");
     };
 

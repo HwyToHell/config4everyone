@@ -5,7 +5,7 @@
     "subtype": [ "regular", "pillow" ],
     "image src":
     {
-      "standard": "",
+      "standard": "bag.jpg",
       "custom": "" 
     }
   },
@@ -15,7 +15,7 @@
     "subtype": "",
     "image src":
     {
-      "standard": "liquid-dairy-products.jpg",
+      "standard": "bottle.jpg",
       "custom": "" 
     }
   },
@@ -52,16 +52,6 @@
   {
     "package type": "jar",
     "material": "glass",
-    "subtype": "",
-    "image src":
-    {
-      "standard": "",
-      "custom": "" 
-    }
-  },
-  {
-    "package type": "pillow bag",
-    "material": "",
     "subtype": "",
     "image src":
     {

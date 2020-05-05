@@ -1,14 +1,15 @@
 <%- include('../partials/header') %>
 
 <div class="container">
-    <h3 class="text-primary">NEW</h3>
-    <p>render SHOW template + submit button for CREATE route (POST request)</p>
+    <h3 class="text-primary"></h3>
     <div>
-        <form action="/configurations" method="POST">
-            <button class="btn btn-primary btn-block" type="submit">Start Your Configuration</button>        
+        <form id="add-cfg" action="/configurations" method="POST">
+            <button class="btn btn-primary btn-block" type="submit">
+                Create New Cocnfiguration</button>        
         </form>
 
     </div>
 </div>
 
+<script src="/public/scripts/new.js"></script>
 <%- include('../partials/footer') %>
