@@ -19,6 +19,15 @@
     background-color: #e9ecef;
 }
 
+i {
+    font-size: 3rem;
+    text-align: center;
+}
+
+img::before {
+    display: none;
+}
+
 #form-new {
     width: 30%;
     margin: 0 auto;

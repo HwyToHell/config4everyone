@@ -3,6 +3,7 @@
     "package type": "bag",
     "material": [ "coated paper", "plastic", "PE", "PP" ],
     "subtype": [ "regular", "pillow" ],
+    "icon": "bag-icon.svg",
     "image src":
     {
       "standard": "bag.jpg",
@@ -13,6 +14,7 @@
     "package type": "bottle",
     "material": [ "glass", "PET" ],
     "subtype": "",
+    "icon": "bottle-icon.svg",
     "image src":
     {
       "standard": "bottle.jpg",
@@ -23,6 +25,7 @@
     "package type": "can",
     "material": "aluminum",
     "subtype": "",
+    "icon": "can-icon.svg",
     "image src":
     {
       "standard": "",
@@ -33,9 +36,10 @@
     "package type": "cup",
     "material": [ "coated paperboard", "plastic", "aluminum-plastic" ], 
     "subtype": [ "pre-formed", "In-machine-formed" ],
+    "icon": "cup-icon.svg",
     "image src":
     {
-      "standard": "liquid-dairy-products.jpg",
+      "standard": "",
       "custom": "" 
     }
   },
@@ -43,6 +47,7 @@
     "package type": "flow wrap",
     "material": [ "coated paper", "plastic", "PE", "PP" ],
     "subtype": "",
+    "icon": "flow-wrap-icon.svg",
     "image src":
     {
       "standard": "",
@@ -53,6 +58,7 @@
     "package type": "jar",
     "material": "glass",
     "subtype": "",
+    "icon": "jar-icon.svg",
     "image src":
     {
       "standard": "",
@@ -63,6 +69,7 @@
     "package type": "pouch",
     "material": [ "coated paper", "plastic", "PE", "PP" ],
     "subtype": [ "side seal", "stand-up" ],
+    "icon": "pouch-icon.svg",
     "image src":
     {
       "standard": "",
