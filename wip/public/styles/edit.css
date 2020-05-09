@@ -1,0 +1,13 @@
+i {
+    width: 3rem;
+    text-align: left;
+}
+
+button.collapsed .fa-minus {
+    display: none;
+}
+
+button:not(.collapsed) .fa-plus {
+    display: none;
+}
+
