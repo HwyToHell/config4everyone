@@ -44,7 +44,32 @@ try {
     template.package_types = JSON.parse(json_data);    
 } catch (err) {
     console.log(err);
+} 
+
+// select industries from template for application
+const industries_selection  = [ "beverage", "food", "dairy" ];
+const goods_selection       = [ "liquid", "paste" ];
+
+function selectIndustries(key, selection) {
+    return function(industry) {
+        return selection.includes(industry[key]);
+    };
 }
+const selectIndustriesByIndustry = selectIndustries("industry", industries_selection);
+
+function selectGoods(key, selection){
+    return function(good){
+        return selection.includes(good[key]);
+    };
+}
+const selectGoodsByGoodsType = selectGoods("goods type", goods_selection);
+const selectGoodsByIndustry = selectGoods("industry", industries_selection);
+
+let industries = template.industries.filter(selectIndustriesByIndustry);
+let packaged_goods = template.packaged_goods.filter(selectGoodsByGoodsType).filter(selectGoodsByIndustry);
+
+
+
 
 // CONTROLLER
 // generate unique ID
@@ -64,14 +89,13 @@ function createConfig(template) {
 
     return {
         id: uniqueId.get(),
-        industries: template.industries,
-        packaged_goods: template.packaged_goods,
+        industries: industries,
+        packaged_goods: packaged_goods,
         package_types: template.package_types,
         machine_types: template.machine_types,
         machine_options: template.machine_options
     };
 }
-
 
 
 
