@@ -20,7 +20,9 @@ var express = require("express"),
     configurations = [];
 
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use("/public", express.static(__dirname + "/public"));
 /*if (!module.parent) {
     app.use(logger("dev"));
@@ -41,14 +43,14 @@ try {
     file = "./data/package-types.json";
     json_data = fs.readFileSync(file, "utf-8");
     console.log("read:", file);
-    template.package_types = JSON.parse(json_data);    
+    template.package_types = JSON.parse(json_data);
 } catch (err) {
     console.log(err);
-} 
+}
 
-// select industries from template for application
-const industries_selection  = [ "beverage", "food", "dairy" ];
-const goods_selection       = [ "liquid", "paste" ];
+// select industries and good types from template for application
+const industries_selection = ["beverage", "food", "dairy"];
+const goods_selection = ["liquid", "paste"];
 
 function selectIndustries(key, selection) {
     return function(industry) {
@@ -57,19 +59,39 @@ function selectIndustries(key, selection) {
 }
 const selectIndustriesByIndustry = selectIndustries("industry", industries_selection);
 
-function selectGoods(key, selection){
-    return function(good){
+function selectGoods(key, selection) {
+    return function(good) {
         return selection.includes(good[key]);
     };
 }
 const selectGoodsByGoodsType = selectGoods("goods type", goods_selection);
 const selectGoodsByIndustry = selectGoods("industry", industries_selection);
 
+function selectTypes(key, selection) {
+    return function(type) {
+        return type[key].some(function(elem) {
+            return selection.includes(elem);
+        });
+    };
+}
+const selectTypesByGoodsType = selectTypes("goods type", goods_selection);
+
 let industries = template.industries.filter(selectIndustriesByIndustry);
 let packaged_goods = template.packaged_goods.filter(selectGoodsByGoodsType).filter(selectGoodsByIndustry);
+let package_types = template.package_types.filter(selectTypesByGoodsType);
+console.log(package_types);
 
+// prepare configuration data for viewing and selecting
+function addView(array) {
+    array.forEach(function(element) {
+        element.view = true;
+        element.selected = false;
+    });
+    return array;
+}
 
-
+let industries_view = addView(industries);
+//console.log(industries_view);
 
 // CONTROLLER
 // generate unique ID
@@ -100,14 +122,14 @@ function createConfig(template) {
 
 
 // ROUTES
-app.get("/", function(req, res){
+app.get("/", function(req, res) {
     //res.send("landing page") // debug only
     //res.redirect("/configurations");
     res.render("index");
 });
 
 // TEST
-app.get("/test", function(req, res){
+app.get("/test", function(req, res) {
     var new_config = createConfig(template);
     //res.send(`new config id: ${new_config.id}`);
 
@@ -121,32 +143,32 @@ app.get("/test", function(req, res){
 
 
 // INDEX
-app.get("/configurations", function(req, res){
+app.get("/configurations", function(req, res) {
     console.log("INDEX route");
     res.render("configurations/index");
 });
 
 // NEW
-app.get("/configurations/new", function(req, res){
+app.get("/configurations/new", function(req, res) {
     console.log("NEW route");
     //res.send("redirecting to POST /configurations");
     res.render("configurations/new");
 });
 
 // CREATE
-app.post("/configurations", function(req, res){
+app.post("/configurations", function(req, res) {
     console.log("CREATE route");
     // move to CREATE
     configurations.push(createConfig(template));
     id_current = configurations[configurations.length - 1].id;
-    
+
     // redirect to EDIT route: /configurations/id
     //res.send(`/configurations/${id_current}/edit`);
     res.redirect(`/configurations/${id_current}/edit`);
 });
 
 // SHOW
-app.get("/configurations/:id", function(req, res){
+app.get("/configurations/:id", function(req, res) {
     console.log("SHOW route");
     res.render("configurations/show", {
         industries: template.industries,
@@ -156,10 +178,10 @@ app.get("/configurations/:id", function(req, res){
 });
 
 // EDIT
-app.get(`/configurations/:${id_current}/edit`, function(req, res){
+app.get(`/configurations/:${id_current}/edit`, function(req, res) {
     console.log("EDIT route");
 
-    var config_current = configurations.find(function(config) {   
+    var config_current = configurations.find(function(config) {
         return (config.id === id_current);
     });
 
@@ -168,7 +190,7 @@ app.get(`/configurations/:${id_current}/edit`, function(req, res){
         console.log("cannot get current configuration");
     };
 
-   /* config_current.industries.forEach(function(element) {
+    /* config_current.industries.forEach(function(element) {
         console.log(element.industry);
     });
 */
@@ -180,9 +202,9 @@ app.get(`/configurations/:${id_current}/edit`, function(req, res){
 });
 
 // UPDATE
-app.post("/configurations/:id", function(req, res){
+app.post("/configurations/:id", function(req, res) {
     console.log("POST");
-    console.log(req.body.name);
+    console.log(req.body.selected);
 });
 
 
@@ -196,11 +218,11 @@ app.get("/package-types", function(req, res){
 */
 
 // test div sizing and alignment
-app.get("/div", function(req, res){
+app.get("/div", function(req, res) {
     res.render("div");
 });
 
-app.get("*", function(req, res){
+app.get("*", function(req, res) {
     res.send("404 not found");
 });
 
@@ -208,3 +230,23 @@ app.get("*", function(req, res){
 app.listen(port, function() {
     console.log(`listening at http://localhost:${port}`);
 });
+
+// service layer
+// TODO move to other module
+function adjustConfig(selection, config) {
+    // IN frontend selected elements
+    // OUT configuration
+    return {
+        id: uniqueId,
+        industries: industries,
+        packaged_goods: packaged_goods,
+        package_types: template.package_types,
+        machine_types: template.machine_types,
+        machine_options: template.machine_options
+    };
+
+    // filter packaged_goods by industry
+    // selection: industry
+
+    // filter package_types by goods_type
+}

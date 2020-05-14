@@ -41,7 +41,7 @@ function selectIndustries(key, selection) {
 const selectIndustriesByIndustry = selectIndustries("industry", industries_selection);
 
 let industries = template.industries.filter(selectIndustriesByIndustry);
-console.log("industries", industries);
+//console.log("industries", industries);
 
 
 
@@ -54,30 +54,37 @@ const selectGoodsByGoodsType = selectGoods("goods type", goods_selection);
 const selectGoodsByIndustry = selectGoods("industry", industries_selection);
 
 let goods = template.packaged_goods.filter(selectGoodsByGoodsType).filter(selectGoodsByIndustry);
-console.log("goods", goods);
+//console.log("goods", goods);
 
 
-
-
-/*
-function or(p1, p2) {
-    return function(x) {
-        return p1(x) || p2(x);
-    
+// Read JSON and parse
+try {
+    let file = "../wip/data/package-types.json";
+    json_data = fs.readFileSync(file, "utf-8");
+    console.log("read:", file);
+    template.package_types = JSON.parse(json_data);
+   
+} catch (err) {
+    console.log(err);
 }
 
-function negative(x) {
-    return x < 0;
-}
-function positive(x) {
-    return x > 0;
-}
-var nonzero = or(negative, positive);
 
-console.log(nonzero(-5)); // true
-console.log(nonzero(0));  // false
-console.log(nonzero(5));  // true
+const goods_selection2 = [
+    "powder",
+    "dry bulk"
+];
 
-// innerFcn: selectIndustry(element-of-industries)
-// var selectIndustry = 
-*/
+// Check if an array contains any element of another array in JavaScript
+console.log(template.package_types[0]["goods type"].some(function(elem) {
+    return goods_selection2.includes(elem);
+}));
+
+// Predicate to check
+function selectTypes(key, selection){
+    return function(type){
+        return type[key].some(elem => selection.includes(elem));
+    };
+}
+const selectTypesByGoodsType = selectTypes("goods type", goods_selection2);
+console.log(template.package_types.filter(selectTypesByGoodsType));
+

@@ -52,7 +52,7 @@
                         <div class="row">
                             <% goods.forEach(element => { %> 
                             <div class="col-md-4 col-lg-3">
-                                <div class="card m-2 packaged-good">
+                                <div class="card m-2 packaged-good" id="<%= element["id"] %>"> 
                                     <div class="card-header text-center"><%= element["packaged good"] %></div>
                                     <img class="card-img-bottom" src="/public/images/packaged-goods/<%= element["image src"]["standard"] %> " alt="">
                                 </div>
@@ -81,7 +81,7 @@
                         <div class="row">
                             <% types.forEach(element => { %> 
                             <div class="col-md-4 col-lg-3">
-                                <div class="card m-2 package-type">
+                                <div class="card m-2 package-type" id="<%= element["id"] %>">
                                     <div class="card-header text-center"><%= element["package type"] %></div>
                                     <img class="card-img-bottom" src="/public/images/package-types/<%= element["icon"] %>" width="50" height="50" alt="">
                                 </div>
@@ -128,63 +128,13 @@
                 </div>
             </div>
         </div>
-
+    
+    <!-- end accordion -->
     </div>
+
+    <p id="update-cfg" class="btn btn-primary btn-block">Update Configuration</p>
 </div>
  
-
-
-
-
-<div class="container">
-
-
-    <!-- list industry -->
-    <div class="container">
-        <div class="row">
-            <% industries.forEach(element => { %> 
-            <div class="col-md-4 col-lg-3">
-                <div class="card m-2 industry" id="<%= element["id"] %>">
-                    <div class="card-header text-center"><%= element["industry"] %></div>
-                    <img class="card-img-bottom" src="/public/images/industries/<%= element["image src"]["standard"] %> " alt="">
-                </div>
-            </div>
-            <% }); %> 
-        </div>
-    </div>
-    <p id="update-cfg" class="btn btn-primary btn-block">Update Configuration</p>
-
-    <!-- list packaged goods -->
-    <p class="mt-5">Select the products you want to package</p>
-    <div class="container">
-        <div class="row">
-            <% goods.forEach(element => { %> 
-            <div class="col-md-4 col-lg-3">
-                <div class="card m-2 packaged-good">
-                    <div class="card-header text-center"><%= element["packaged good"] %></div>
-                    <img class="card-img-bottom" src="/public/images/packaged-goods/<%= element["image src"]["standard"] %> " alt="">
-                </div>
-            </div>
-            <% }); %> 
-        </div>
-    </div>
-
-    <!-- list package types -->
-    <p class="mt-5">Select the package type you want to use</p>
-    <i class="fas fa-wine-bottle"></i>
-    <div class="container">
-        <div class="row">
-            <% types.forEach(element => { %> 
-            <div class="col-md-4 col-lg-3">
-                <div class="card m-2 package-type">
-                    <div class="card-header text-center"><%= element["package type"] %></div>
-                    <img class="card-img-bottom" src="/public/images/package-types/<%= element["icon"] %>" width="50" height="50" alt="">
-                </div>
-            </div>
-            <% }); %> 
-        </div>
-    </div>
-</div>
 
 <!-- handling UPDATE POST requrTODO delete client.js in show template, insert in new and edit -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
