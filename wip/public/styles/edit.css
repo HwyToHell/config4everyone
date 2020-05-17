@@ -11,3 +11,10 @@ button:not(.collapsed) .fa-plus {
     display: none;
 }
 
+.card.industry:hover {
+    opacity: 0.6;
+}
+
+.card.packaged-good:hover {
+    opacity: 0.6;
+}

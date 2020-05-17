@@ -13,6 +13,7 @@
   |  |-views (html templates)
    
 ### TODO
+- UI: change style on hover
 - move model from json to db
 
 ### Change history
