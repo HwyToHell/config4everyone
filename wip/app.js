@@ -29,6 +29,7 @@ app.use("/public", express.static(__dirname + "/public"));
 }*/
 
 // Read JSON and parse
+// TODO move to db
 try {
     let file = "./data/industries.json",
         json_data = fs.readFileSync(file, "utf-8");
@@ -49,6 +50,7 @@ try {
 }
 
 // select industries and good types from template for application
+// customization for specific application or customer
 const industries_selection = ["beverage", "food", "dairy"];
 const goods_selection = ["liquid", "paste"];
 
@@ -79,9 +81,9 @@ const selectTypesByGoodsType = selectTypes("goods type", goods_selection);
 let industries = template.industries.filter(selectIndustriesByIndustry);
 let packaged_goods = template.packaged_goods.filter(selectGoodsByGoodsType).filter(selectGoodsByIndustry);
 let package_types = template.package_types.filter(selectTypesByGoodsType);
-console.log(package_types);
+//console.log(package_types);
 
-// prepare configuration data for viewing and selecting
+// prepare configuration data for viewing and selecting in front end
 function addView(array) {
     array.forEach(function(element) {
         element.view = true;
@@ -93,8 +95,8 @@ function addView(array) {
 let industries_view = addView(industries);
 //console.log(industries_view);
 
-// CONTROLLER
-// generate unique ID
+// MODEL
+// generate unique ID (will be provided by db in production version)
 var uniqueId = (function() {
     var id = 0;
     return {
@@ -108,7 +110,7 @@ var uniqueId = (function() {
 function createConfig(template) {
     // in:  template
     // out: config with new ID, based on template
-
+    // TODO not implemented yet
     return {
         id: uniqueId.get(),
         industries: industries,
@@ -128,25 +130,13 @@ app.get("/", function(req, res) {
     res.render("index");
 });
 
-// TEST
-app.get("/test", function(req, res) {
-    var new_config = createConfig(template);
-    //res.send(`new config id: ${new_config.id}`);
-
-    res.render("configurations/edit", {
-        industries: new_config.industries,
-        goods: new_config.packaged_goods,
-        types: new_config.package_types
-    });
-
-});
-
 
 // INDEX
 app.get("/configurations", function(req, res) {
     console.log("INDEX route");
     res.render("configurations/index");
 });
+
 
 // NEW
 app.get("/configurations/new", function(req, res) {
@@ -155,17 +145,18 @@ app.get("/configurations/new", function(req, res) {
     res.render("configurations/new");
 });
 
+
 // CREATE
 app.post("/configurations", function(req, res) {
     console.log("CREATE route");
-    // move to CREATE
+
     configurations.push(createConfig(template));
     id_current = configurations[configurations.length - 1].id;
 
     // redirect to EDIT route: /configurations/id
-    //res.send(`/configurations/${id_current}/edit`);
     res.redirect(`/configurations/${id_current}/edit`);
 });
+
 
 // SHOW
 app.get("/configurations/:id", function(req, res) {
@@ -176,6 +167,7 @@ app.get("/configurations/:id", function(req, res) {
         types: template.package_types
     });
 });
+
 
 // EDIT
 app.get(`/configurations/:${id_current}/edit`, function(req, res) {
@@ -201,6 +193,7 @@ app.get(`/configurations/:${id_current}/edit`, function(req, res) {
     });
 });
 
+
 // UPDATE
 app.post("/configurations/:id", function(req, res) {
     console.log("POST");
@@ -208,20 +201,7 @@ app.post("/configurations/:id", function(req, res) {
 });
 
 
-/* app.get(/packaged-goods, function(req, res){
-res.render("packaged-goods", {goods: available.packaged_goods});
-});
-
-app.get("/package-types", function(req, res){
-    res.render("package-types", {types: available.package_types});
-});
-*/
-
-// test div sizing and alignment
-app.get("/div", function(req, res) {
-    res.render("div");
-});
-
+// NOT FOUND
 app.get("*", function(req, res) {
     res.send("404 not found");
 });
@@ -247,6 +227,5 @@ function adjustConfig(selection, config) {
 
     // filter packaged_goods by industry
     // selection: industry
-
     // filter package_types by goods_type
 }
