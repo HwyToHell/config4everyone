@@ -4,6 +4,10 @@
 - visually configuring machinery equipment, see vision doc
 - for details see requirements spec
 
+### Usage
+- start Express server in directory config4veryone/wip: node app.js
+- in browser open: http://localhost:3000
+
 ### Directory tree
 - config4everyone (.git, README.md)  
   |-img (raw images)  
